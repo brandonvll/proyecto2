@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a1b30d6d-87bd-4b8e-a1a4-ab79a156f4f7/microsoft.web/sites/subscriptions/a1b30d6d-87bd-4b8e-a1a4-ab79a156f4f7/resourceGroups/ecommerceBrandon/providers/Microsoft.Web/sites/ecommerceBrandon",
+    "appService.deploySubpath": "."
+}
