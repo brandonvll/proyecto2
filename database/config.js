@@ -1,7 +1,7 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize, DataTypes } = require("sequelize");
 
-const dotenv = require('dotenv');
-dotenv.config({ path: './config.env' });
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 
 const db = new Sequelize({
   dialect: "postgres",
@@ -11,6 +11,15 @@ const db = new Sequelize({
   port: process.env.SECURITY_PORT,
   database: process.env.SECURITY,
   logging: false,
+  dialectOptions:
+    process.env.NODE_ENV === "production"
+      ? {
+          ssl: {
+            required: true,
+            rejectUnauthorized: false,
+          },
+        }
+      : {},
 });
 
 module.exports = { db };
